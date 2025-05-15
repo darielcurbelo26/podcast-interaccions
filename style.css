@@ -1,0 +1,695 @@
+/* =========================
+   FUENTES
+========================= */
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Metal&display=swap');
+
+/* =========================
+   RESET GLOBAL
+========================= */
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Bricolage Grotesque", sans-serif;
+    line-height: 120%;
+}
+
+body {
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+body.locked {
+    overflow: hidden;
+}
+
+button {
+    font-size: 1em;
+}
+
+h1 {
+    all: unset;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+
+h2 {
+    font-weight: 400;
+    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+    line-height: 120%;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 10vw;
+}
+
+/* =========================
+   ESTRUCTURA
+========================= */
+.wrap-all {
+    height: auto;
+    padding: 0 1em;
+}
+
+[data-scroll-container] {
+    will-change: transform;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================
+   NAVEGACIÓN
+========================= */
+.nav-bar-container {
+    padding: 1em 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.wrap-nav-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1em;
+}
+
+.navegation-secction {
+    padding-top: 2em;
+    padding-bottom: 2em;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    z-index: 2;
+    background: white;
+    top: 0;
+    cursor: default;
+    overflow: hidden;
+}
+
+.nav-item {
+    flex: 0 0 auto;
+    margin-right: 40px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.nav-item:hover {
+    font-weight: bold;
+}
+
+.underline {
+    text-decoration: underline;
+    text-decoration-thickness: 1.6px;
+    text-decoration-color: black;
+    text-underline-offset: 32%;
+    -webkit-text-decoration-line: underline;
+    -webkit-text-decoration-thickness: 1.6px;
+    -webkit-text-decoration-color: black;
+    -webkit-text-underline-offset: 32%;
+}
+
+#navbar {
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.01);
+    backdrop-filter: blur(2px);
+    transition: top 0.3s ease;
+}
+
+/* =========================
+   CONTENIDO PRINCIPAL
+========================= */
+.content-1 {
+    position: sticky;
+    top: -6em;
+    margin-top: 2em;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero {
+    margin-top: 1em;
+    padding-bottom: 1em;
+    font-size: clamp(1rem, 4vw, 3rem);
+    line-height: 120%;
+    user-select: none;
+}
+
+/* =========================
+   ELEMENTOS VISUALES
+========================= */
+.box {
+    position: relative;
+    border: 2px solid;
+    height: clamp(28rem, 50vh, 40rem);
+    border-radius: 1em;
+    overflow: hidden;
+}
+
+.big-type {
+    font-size: 16vw;
+    line-height: 100%;
+    text-transform: uppercase;
+}
+
+.emoji {
+    font-size: 12vw;
+}
+
+/* =========================
+   LOGO / TM
+========================= */
+.logoTM {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.16em;
+}
+
+.TM {
+    font-size: 0.5em;
+    font-weight: 600;
+}
+
+/* =========================
+   PODCAST GENERAL
+========================= */
+.podcast {
+    display: flex;
+    width: clamp(6rem, 24vw, 12rem);
+    height: auto;
+    aspect-ratio: 1 / 1;
+    padding: 16px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+    border-radius: 0.75em;
+    box-shadow: 0px 124px 35px rgba(0, 0, 0, 0.00), 0px 79px 32px rgba(0, 0, 0, 0.01), 0px 44px 27px rgba(0, 0, 0, 0.04), 0px 20px 20px rgba(0, 0, 0, 0.07), 0px 5px 11px rgba(0, 0, 0, 0.08);
+}
+
+.titulos-podcast {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    user-select: none;
+}
+
+.audio-wrap {
+    background: transparent;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: clamp(1rem, 3.5vw, 2.5rem);
+    line-height: 160%;
+    border-bottom: 1px solid black;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.audio-wrap:hover {
+    color: #83A7FF;
+}
+
+.podcast-audio-container {}
+
+.los-podcast {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+}
+
+/* =========================
+   INTERACCIONES PODCAST
+========================= */
+.play {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+    cursor: pointer;
+}
+
+.podcast svg {
+    transition: color 0.3s ease;
+    color: black;
+}
+
+.podcast:hover svg {
+    transition: transform 0.3s ease;
+    transform: scale(1.1);
+}
+
+.podcast svg:hover {
+    color: white;
+}
+
+.podcast:hover {
+    filter: grayscale(100%);
+}
+
+/* =========================
+   SUBMENÚ
+========================= */
+.menu-btn {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: .3s;
+
+}
+
+.submenu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+    z-index: 9999;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.submenu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.submenu li {
+    margin: 20px 0;
+    cursor: pointer;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* =========================
+   OVERLAY
+========================= */
+#podcast-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 10000;
+    backdrop-filter: blur(2px);
+}
+
+#podcast-overlay .overlay-content {
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 90%;
+    max-height: 80%;
+    text-align: center;
+}
+
+.overlay-content {
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 90%;
+    position: relative;
+}
+
+#close-overlay {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* =========================
+   ROTACIONES
+========================= */
+.rotation {
+    transform: rotate(15deg);
+    position: absolute;
+}
+
+.position-1 {
+    transform: rotate(-12deg);
+    position: absolute;
+    right: 0%;
+    top: 0%;
+    background: #FED440;
+}
+
+.position-2 {
+    transform: rotate(8deg);
+    position: absolute;
+    right: 30%;
+    bottom: 0%;
+    background: #83A7FF;
+}
+
+.position-3 {
+    transform: rotate(-4deg);
+    position: absolute;
+    left: 1%;
+    bottom: 0%;
+    background: #F47A49;
+}
+
+.position-4 {
+    transform: rotate(15deg);
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    background: #C58FFE;
+}
+
+.position-5 {
+    transform: rotate(20deg);
+    position: absolute;
+    left: 20%;
+    top: 40%;
+    background: #FFD0E2;
+}
+
+.position-6 {
+    transform: rotate(-20deg);
+    position: absolute;
+    right: 4%;
+    top: 40%;
+    background: #EBE4DC;
+}
+
+/* =========================
+   TRANSICIONES Y EFECTOS
+========================= */
+.hidden {
+    display: none;
+    transition: all 0.3s ease;
+}
+
+.show {
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   PANTALLA DE CARGA
+========================= */
+.loading-screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #FED440;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.text-container {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-text {
+    font-size: 12vw;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    text-align: center;
+}
+
+.main-text span {
+    vertical-align: super;
+}
+
+.sub-text {
+    font-size: clamp(16px, 2.5vw, 4rem);
+    opacity: 0;
+    user-select: none;
+}
+
+.text {
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 100%;
+    user-select: none;
+}
+
+.text span {
+    font-size: 2vw;
+    position: relative;
+    top: -2vw;
+}
+
+@media (max-width: 768px) {
+    .text span {
+        font-size: 4vw;
+        top: 0;
+    }
+}
+
+.letter-spacing {
+    font-size: 12vw !important;
+    position: relative !important;
+    top: 4vw !important;
+    letter-spacing: -1.6vw !important;
+}
+
+/* =========================
+   REPRODUCTOR Y LISTA
+========================= */
+audio {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.respuesta-text {
+    max-width: 340px;
+    text-align: center;
+}
+
+.sub-tarjeta {
+    font-size: clamp(.75rem, 2.5vw, 1rem);
+}
+
+#last {
+    margin-right: 0px !important;
+}
+
+.simbolo {
+    width: clamp(32px, 10vw, 32px);
+    max-width: 64px !important;
+    max-height: 64px !important;
+    display: none;
+}
+
+#llista-episodis {
+    padding: 0em;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .5rem;
+}
+
+.dani-code {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 8px;
+    padding-bottom: 1.5rem;
+}
+
+.info p {
+    font-size: clamp(1rem, 2vw, 1.5rem) !important;
+    line-height: 140%;
+}
+
+.episodi-grid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1.1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    gap: 2rem;
+}
+
+.info {
+    text-align: left;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.episode-grid-interno {
+
+    display: flex;
+    flex-direction: column;
+    gap: 0rem
+}
+
+.player audio {
+    width: 99%;
+    max-width: 100%;
+    border-radius: 32px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0) !important;
+    border: solid black 1px;
+    z-index: 0 !important;
+}
+
+/* =========================
+   MEDIA QUERIES
+========================= */
+@media (max-width: 800px) {
+    .content-1 {
+        top: -2em;
+    }
+
+    .hero {
+        margin-top: clamp(1.75em, 1vh, 1.5em);
+    }
+
+    .position-2 {
+        right: clamp(24%, 1vh, 20%);
+    }
+
+    .position-3 {
+        left: clamp(1%, 1vh, 2%);
+    }
+
+    .position-4 {
+        left: clamp(0%, 1vh, 2%);
+    }
+
+    .position-5 {
+        left: clamp(18%, 1vh, 10%);
+    }
+
+    .position-6 {
+        right: clamp(8%, 1vh, 2%);
+    }
+}
+
+@media (max-width: 730px) {
+    .navegation-secction {
+        cursor: grabbing;
+    }
+
+    .simbolo {
+        display: flex;
+    }
+
+    .logoTM {
+        display: none;
+    }
+}
+
+@media (max-width: 460px) {
+
+    .episodi-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .sub-tarjeta {
+        display: none;
+    }
+
+    .titulos-podcast {
+        font-size: 12px;
+    }
+
+    .simbolo {
+        width: 24px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    #navbar {
+        position: fixed;
+        width: 100vw;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        background: white;
+        backdrop-filter: none;
+        transition: top 0.3s ease;
+    }
+}
+
+.safari #navbar {
+    background: white;
+    backdrop-filter: none;
+}
+
+.safari audio {
+    border: none;
+}
+
+.safari menu-btn {
+    color: black !important;
+}
+
+
+.menu-btn:hover {
+
+    font-weight: 700;
+}

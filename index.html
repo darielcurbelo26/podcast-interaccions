@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interaccions Podcast</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Locomotive Scroll CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.0.0/dist/locomotive-scroll.css">
+
+    <link rel="icon" href="logo/logo-variante-02.svg" type="image/png">
+
+    <link rel="apple-touch-icon" href="logo/logo-variante-02.svg">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Locomotive Scroll JS -->
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.0.0/dist/locomotive-scroll.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=close" />
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+
+</head>
+
+<body>
+
+
+    <div class="loading-screen">
+        <div class="text-container">
+            <div class="main-text">
+                <!-- Texto principal -->
+                <span class="text">Interaccion<span class="letter-spacing">s</span> <span>EADT</span></span>
+            </div>
+            <div class="sub-text">
+                <!-- Subtítulo debajo -->
+                <span class="text">Un podcast creat <br> pels estudiants <br> de l’EADT</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="podcast-overlay" class="hidden">
+        <div class="overlay-content">
+            <!--
+                            <button id="close-overlay">
+
+                                <span class="material-symbols-outlined">
+
+                                    close
+                                </span></button>
+-->
+            <audio id="podcast-player" controls autoplay></audio>
+        </div>
+    </div>
+
+    <div class="submenu" id="submenu">
+        <button class="close-btn" onclick="toggleMenu(false)">
+
+            <span class="material-symbols-outlined">
+
+                close
+            </span></button>
+        <ul>
+            <ul id="ABOUT">
+                <li onclick="toggleText()" class="faq-item">Què és Interaccions?</li>
+            </ul>
+
+            <div id="respuesta" class="hidden">
+                <p class="respuesta-text">Interaccions és un projecte centrat en l’exploració del disseny, la tecnologia i la cultura digital des d’una perspectiva crítica, creat pels estudiants de l’Escola d’Art i Disseny de Tarragona</p>
+            </div>
+            <!--
+    <li>Servicios</li>
+    <li>Portafolio</li>
+    <li>Contacto</li>
+-->
+        </ul>
+    </div>
+
+    <div class="wrap-all">
+        <div id="HOME" class="container">
+
+            <nav id="navbar" class="nav-bar-container">
+                <div class="wrap-nav-bar">
+
+                    <div class="simbolo">
+
+                        <img src="logo/logo-variante-02.png" style="width: 100%; height: auto;">
+
+                    </div>
+
+                    <div class="logoTM">
+                        <h1 class="logo">Interaccions</h1>
+                        <div class="TM">EADT</div>
+                    </div>
+
+                    <button class="menu-btn" onclick="toggleMenu(true)">Menú</button>
+
+                </div>
+            </nav>
+
+            <div class="content-1">
+
+
+                <h2 class="hero">Parlem d'innovació, creativitat i les eines que estan canviant el món del disseny i la tecnologia. Des d'intel·ligència artificial fins a tendències en UX, explorem com els futurs professionals estan donant forma al demà.
+                </h2>
+
+                <div class="box">
+                    <div class="podcast position-1 arrastrable flotar1 rotar">
+                        <div class="titulos-podcast">
+                            Pòdcast Bonus Track
+
+                            <div class="play podcast-audio" data-audio="animacion/Podcast-animació-bonus-track.mp3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28%" height="40%" viewBox="0 0 39 45">
+                                    <path d="M37 19.0359C39.6667 20.5755 39.6667 24.4245 37 25.9641L6.25 43.7176C3.58334 45.2572 0.249998 43.3327 0.249998 40.2535L0.25 4.74648C0.25 1.66728 3.58333 -0.257225 6.25 1.28238L37 19.0359Z" fill="currentColor" />
+                                </svg>
+                            </div>
+
+                            <div class="sub-tarjeta">pels estudiants d'Animació
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="podcast position-2 arrastrable flotar2 rotar">
+                        <div class="titulos-podcast">
+                            Disseny Digital vs. Artesanal
+
+                            <div class="play podcast-audio" data-audio="gráfica-interactiva/Guio-Eva-Clara.mp3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28%" height="40%" viewBox="0 0 39 45">
+                                    <path d="M37 19.0359C39.6667 20.5755 39.6667 24.4245 37 25.9641L6.25 43.7176C3.58334 45.2572 0.249998 43.3327 0.249998 40.2535L0.25 4.74648C0.25 1.66728 3.58333 -0.257225 6.25 1.28238L37 19.0359Z" fill="currentColor" />
+                                </svg>
+                            </div>
+
+                            <div class="sub-tarjeta">per Guiomar, Eva, Clara</div>
+                        </div>
+                    </div>
+
+                    <div class="podcast position-3 arrastrable flotar3 rotar">
+                        <div class="titulos-podcast">
+                            IA: Progrés o perill?
+
+                            <div class="play podcast-audio" data-audio="gráfica-interactiva/Dariel-Aitana-Rocío.mp3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28%" height="40%" viewBox="0 0 39 45">
+                                    <path d="M37 19.0359C39.6667 20.5755 39.6667 24.4245 37 25.9641L6.25 43.7176C3.58334 45.2572 0.249998 43.3327 0.249998 40.2535L0.25 4.74648C0.25 1.66728 3.58333 -0.257225 6.25 1.28238L37 19.0359Z" fill="currentColor" />
+                                </svg>
+                            </div>
+
+                            <div class="sub-tarjeta">per Dariel, Aitana, Rocío</div>
+                        </div>
+                    </div>
+
+                    <div class="podcast position-4 arrastrable flotar4 rotar">
+                        <div class="titulos-podcast">
+                            IA y grans corporaciones
+
+                            <div class="play podcast-audio" data-audio="gráfica-interactiva/Karen-Sofia-Aleix.mp3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28%" height="40%" viewBox="0 0 39 45">
+                                    <path d="M37 19.0359C39.6667 20.5755 39.6667 24.4245 37 25.9641L6.25 43.7176C3.58334 45.2572 0.249998 43.3327 0.249998 40.2535L0.25 4.74648C0.25 1.66728 3.58333 -0.257225 6.25 1.28238L37 19.0359Z" fill="currentColor" />
+                                </svg>
+                            </div>
+
+                            <div class="sub-tarjeta"> per Karen, Sofia, Aleix</div>
+                        </div>
+                    </div>
+
+                    <div class="podcast position-5 arrastrable flotar5 rotar">
+                        <div class="titulos-podcast">
+                            Sobre Disseny Gràfic
+                            <div class="play podcast-audio" data-audio="publicitaria/Enzo-Anàs-Rachid-Alba.mp3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28%" height="40%" viewBox="0 0 39 45">
+                                    <path d="M37 19.0359C39.6667 20.5755 39.6667 24.4245 37 25.9641L6.25 43.7176C3.58334 45.2572 0.249998 43.3327 0.249998 40.2535L0.25 4.74648C0.25 1.66728 3.58333 -0.257225 6.25 1.28238L37 19.0359Z" fill="currentColor" />
+                                </svg>
+                            </div>
+
+                            <div class="sub-tarjeta">pels estudiants de G. Publicitària</div>
+
+                        </div>
+                    </div>
+
+                    <div class="podcast position-6 arrastrable flotar6 rotar">
+                        <div class="titulos-podcast">
+                            Realitat Virtual: ¿Futur o risc?
+
+                            <div class="play podcast-audio" data-audio="gráfica-interactiva/Laura-Jin-Noa.mp3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28%" height="40%" viewBox="0 0 39 45">
+                                    <path d="M37 19.0359C39.6667 20.5755 39.6667 24.4245 37 25.9641L6.25 43.7176C3.58334 45.2572 0.249998 43.3327 0.249998 40.2535L0.25 4.74648C0.25 1.66728 3.58333 -0.257225 6.25 1.28238L37 19.0359Z" fill="currentColor" />
+                                </svg>
+                            </div>
+
+                            <div class="sub-tarjeta">per Laura, Jin, Noa</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="los-podcast grabbing">
+                <div class="navegation-secction">
+                    <div class="nav-item" data-filter="todos"><span>Tots</span></div>
+
+                    <div class="nav-item" data-filter="g-interactiva">G. Interactiva</div>
+
+                    <div class="nav-item" data-filter="g-publicitaria">G. Publicitària</div>
+
+                    <div class="nav-item" data-filter="animacion">Animació</div>
+
+                    <div class="nav-item" data-filter="ilustracion">Il·lustració</div>
+
+                    <div id="last" class="nav-item last" data-filter="arts-del-mur">Arts del mur</div>
+                </div>
+
+                <div id="llista-episodis" class="podcast-audio-container">
+
+
+                    <!-- Aquí van los podcasts -->
+
+                </div>
+            </div>
+
+        </div>
+
+        <script src="script.js"></script>
+
+    </div>
+</body></html>
