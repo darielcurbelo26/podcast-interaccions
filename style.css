@@ -689,6 +689,11 @@ audio {
     text-decoration: inherit;
 }
 
+.safari button {
+    color: black !important;
+    text-decoration: inherit;
+}
+
 
 .menu-btn:hover {
 
