@@ -686,6 +686,7 @@ audio {
 
 .safari menu-btn {
     color: black !important;
+    text-decoration: inherit;
 }
 
 
