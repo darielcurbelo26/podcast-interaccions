@@ -671,12 +671,12 @@ audio {
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 320px) {
+
 
     .sub-tarjeta {
         display: none;
-    }
-}
+    }    
 
 .safari #navbar {
     background: white;
